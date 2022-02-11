@@ -17,7 +17,8 @@ $ yarn build
 ```ts
 import { set, get, remove } from 'ic-storage';
 
-const expiresAt = (new Date()).setMonth(expiresAt.getMonth() + 1);
+const currentDate = new Date();
+const expiresAt = currentDate.setMonth(currentDate.getMonth() + 1);
 
 set('key', 'value', expiresAt);
 get('key'); // if expired => undefined
